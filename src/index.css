@@ -1,0 +1,79 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+table {
+  border: 1px solid #ccc;
+  min-width: 800px;
+  margin: 0 auto;
+  max-height: 80vh;
+  display: grid;
+  grid-template-rows: 2.5rem 1fr 2.5rem;
+}
+tr {
+  display: grid;
+  grid-template-columns: 3rem repeat(5, 1fr);
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+tbody {
+  height: 100%;
+  overflow-y: auto;
+}
+td {
+  text-align: center;
+}
+thead {
+  font-weight: bold;
+}
+tfoot {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem;
+  border-top: 1px solid #ccc;
+  gap: 1rem;
+}
+tfoot > button {
+  padding: 0.3rem 0.6rem;
+  text-transform: uppercase;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.filter {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+ul > li {
+  list-style-type: none;
+}
+
+
+
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
