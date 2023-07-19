@@ -30,7 +30,6 @@ td {
 thead {
   font-weight: bold;
   background: #ccc;
-  height: 2rem;
 }
 tfoot {
   display: flex;
