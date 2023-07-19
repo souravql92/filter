@@ -32,7 +32,7 @@ const Table = () => {
             ?.slice(currentPage * 20, (currentPage + 1) * 20)
             .map((item: any, i: number) => (
               <tr key={i}>
-                <td>{currentPage * 50 + i + 1}</td>
+                <td>{currentPage * 20 + i + 1}</td>
                 <td>{item.number}</td>
                 <td>{item.mod3}</td>
                 <td>{item.mod4}</td>
