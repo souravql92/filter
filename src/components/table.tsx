@@ -42,7 +42,7 @@ const Table = () => {
             ))}
         </tbody>
         <tfoot>
-          <span>{`${(currentPage + 1)}/${Math.floor(rowData.length / 50)}`}</span>
+          <span>{`${(currentPage + 1)}/${Math.floor(rowData.length / 20)}`}</span>
           <button
             disabled={currentPage === 0}
             onClick={() => setCurrentPage(currentPage - 1)}
@@ -50,7 +50,7 @@ const Table = () => {
             <GrFormPrevious />
           </button>
           <button
-            disabled={currentPage === Math.floor(rowData.length / 50)}
+            disabled={currentPage === Math.floor(rowData.length / 20)}
             onClick={() => setCurrentPage(currentPage + 1)}
           >
             <GrFormNext />
