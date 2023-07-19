@@ -9,7 +9,8 @@ table {
   margin: 0 auto;
   max-height: 80vh;
   display: grid;
-  grid-template-rows: 2.5rem 1fr 2.5rem;
+  grid-template-rows: 1.5rem 1fr 2rem;
+  font-size: .8rem;
 }
 thead > tr {
   border: none !important;
@@ -29,6 +30,7 @@ td {
 thead {
   font-weight: bold;
   background: #ccc;
+  height: 2rem;
 }
 tfoot {
   display: flex;
