@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+.container > button {
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border: none;
+  box-shadow: 1px 1px 2px gray;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.card {
+  position: absolute;
+  top: 4.5rem;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 1px 1px 2px gray;
+  background-color: #fff;
+}
+.container .lists {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.list {
+  display: grid;
+  grid-template-columns: 2rem 1fr 3rem;
+  padding: 0.5rem;
+}
+.title {
+  background: #ccc;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+.search {
+  grid-template-columns: 2rem 1fr;
+  border-bottom: 1px solid #ccc;
+}
+.search > input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.search > div {
+  text-align: center;
+  color: #808080;
+}
