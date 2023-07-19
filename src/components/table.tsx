@@ -29,10 +29,10 @@ const Table = () => {
         </thead>
         <tbody>
           {rowData
-            ?.slice(currentPage * 20, (currentPage + 1) * 20)
+            ?.slice(currentPage * 100, (currentPage + 1) * 100)
             .map((item: any, i: number) => (
               <tr key={i}>
-                <td>{currentPage * 20 + i + 1}</td>
+                <td>{currentPage * 100 + i + 1}</td>
                 <td>{item.number}</td>
                 <td>{item.mod3}</td>
                 <td>{item.mod4}</td>
@@ -42,7 +42,9 @@ const Table = () => {
             ))}
         </tbody>
         <tfoot>
-          <span>{`${(currentPage + 1)}/${Math.floor(rowData.length / 20)}`}</span>
+          <span>{`${currentPage + 1}/${Math.ceil(
+            rowData.length / 100
+          )}`}</span>
           <button
             disabled={currentPage === 0}
             onClick={() => setCurrentPage(currentPage - 1)}
@@ -50,7 +52,7 @@ const Table = () => {
             <GrFormPrevious />
           </button>
           <button
-            disabled={currentPage === Math.floor(rowData.length / 20)}
+            disabled={currentPage === Math.floor(rowData.length / 100)}
             onClick={() => setCurrentPage(currentPage + 1)}
           >
             <GrFormNext />

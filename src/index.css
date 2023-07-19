@@ -11,10 +11,12 @@ table {
   display: grid;
   grid-template-rows: 2.5rem 1fr 2.5rem;
 }
+thead > tr {
+  border: none !important;
+}
 tr {
   display: grid;
   grid-template-columns: 3rem repeat(5, 1fr);
-  padding: 0.3rem 0.5rem;
   border-bottom: 1px solid #ccc;
 }
 tbody {
@@ -26,6 +28,7 @@ td {
 }
 thead {
   font-weight: bold;
+  background: #ccc;
 }
 tfoot {
   display: flex;
@@ -50,12 +53,6 @@ tfoot > button {
 ul > li {
   list-style-type: none;
 }
-
-
-
-
-
-
 
 /* width */
 ::-webkit-scrollbar {
