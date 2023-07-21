@@ -1,7 +1,6 @@
 import { FC, useState, useEffect, ChangeEvent, useContext, memo } from "react";
 import styles from "./styles.module.css";
 import { AiFillCaretDown, AiOutlineSearch } from "react-icons/ai";
-import jsonData from "../data.json";
 import Select from "./select";
 import { MainProvider } from "../context";
 
@@ -17,27 +16,12 @@ interface RowArray {
 
 const SelectBar: FC<Props> = ({ name }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const [data, setData] = useState<RowArray[]>([]);
   const [newArr, setNewArr] = useState<RowArray[]>([]);
-  const { filterObj, setFilterObj }: any = useContext(MainProvider);
+  const { filterObj, setFilterObj, filterStat }: any = useContext(MainProvider);
 
   useEffect(() => {
-    let tempObj: any = {};
-    let tempArr: RowArray[] = [];
-
-    for (let i = 0; i < jsonData.length; i++) {
-      let ele: any = jsonData[i];
-      let key: string = ele[name];
-      tempObj[key] = (tempObj[key] || 0) + 1;
-    }
-
-    for (let i = 0; i < Object.keys(tempObj)?.length; i++) {
-      let key = Object.keys(tempObj)[i];
-      tempArr.push({ name: key, count: tempObj[key], isChecked: false });
-    }
-    setNewArr(tempArr);
-    setData(tempArr);
-  }, [name]);
+    setNewArr(filterStat[name]);
+  }, [filterStat, name]);
 
   const handleSelect = (value: string, check: boolean) => {
     let tempArr = newArr?.map((item) =>
@@ -58,7 +42,9 @@ const SelectBar: FC<Props> = ({ name }) => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     let val = e?.target?.value;
-    let tempArr = data.filter((item) => item.name?.includes(val?.trim()));
+    let tempArr = filterStat[name].filter((item: any) =>
+      item.name?.includes(val?.trim())
+    );
     setNewArr(tempArr);
   };
 
